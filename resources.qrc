@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Resources/logo-fb.png</file>
+        <file>Resources/logo-fb.ico</file>
+    </qresource>
+    <qresource prefix="/menu_icons">
+        <file>Resources/about.png</file>
+        <file>Resources/exit.png</file>
+        <file>Resources/help.png</file>
+        <file>Resources/punaise.png</file>
+        <file>Resources/settings.png</file>
+        <file>Resources/settings_big.png</file>
+        <file>Resources/update.png</file>
+        <file>Resources/website.png</file>
+    </qresource>
+</RCC>
