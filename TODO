@@ -1,3 +1,2 @@
-- Corriger le bug qui fait que les réglages ne réagissent pas comme prévu
 - Implémenter l'appui sur les boutons (qui appellera les URL de l'API)
 - Trouver un moyen pour gérer l'appui long sur les touches

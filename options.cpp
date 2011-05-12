@@ -86,7 +86,6 @@ void Options::on_cbox_profil_currentIndexChanged(int profile)
         }
 
         //on set le code
-        QMessageBox::information(this, "code profil 1", profile1->getCode());
         ui->txtfield_code->setText(profile1->getCode());
     }
     if(profile == 1)
@@ -106,7 +105,7 @@ void Options::on_cbox_profil_currentIndexChanged(int profile)
             ui->cbox_hd->setCurrentIndex(2);
         }
 
-        ui->txtfield_code->setText(profile1->getCode());
+        ui->txtfield_code->setText(profile2->getCode());
     }
     if(profile == 2)
     {
@@ -125,7 +124,7 @@ void Options::on_cbox_profil_currentIndexChanged(int profile)
             ui->cbox_hd->setCurrentIndex(2);
         }
 
-        ui->txtfield_code->setText(profile1->getCode());
+        ui->txtfield_code->setText(profile3->getCode());
     }
 }
 
