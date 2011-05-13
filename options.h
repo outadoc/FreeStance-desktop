@@ -54,6 +54,7 @@ signals:
 
 private:
     Ui::Options *ui;
+    Profile *profiles[3];
     Profile *profile1;
     Profile *profile2;
     Profile *profile3;

@@ -32,31 +32,17 @@ Options::Options(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //on créé 3 profils temporaires
-    profile1 = new Profile("profile1");
-    profile2 = new Profile("profile2");
-    profile3 = new Profile("profile3");
+    //on créé 3 profils temporaires, qui seront enregistrés dans un fichier avec QSettings si l'utilisateur le désire
+    profile1 = new Profile("Profile 1");
+    profile2 = new Profile("Profile 2");
+    profile3 = new Profile("Profile 3");
 
     qsettingstable = new QSettings("outadoc", "FreeStance");
 
     //remplissage du champ texte avec le code du profil 1
     ui->txtfield_code->setText(profile1->getCode());
-
     //sélection du hd avec le hd du profil 1
-    if(profile1->getHd() == 1)
-    {
-        ui->cbox_hd->setCurrentIndex(0);
-    }
-
-    if(profile1->getHd() == 2)
-    {
-        ui->cbox_hd->setCurrentIndex(1);
-    }
-
-    if(profile1->getHd() == 3)
-    {
-        ui->cbox_hd->setCurrentIndex(2);
-    }
+    ui->cbox_hd->setCurrentIndex(profile1->getHd() - 1);
 }
 
 Options::~Options()
@@ -70,60 +56,18 @@ void Options::on_cbox_profil_currentIndexChanged(int profile)
     if(profile == 0)
     {
         //on set le hd
-        if(profile1->getHd() == 1)
-        {
-            ui->cbox_hd->setCurrentIndex(0);
-        }
-
-        if(profile1->getHd() == 2)
-        {
-            ui->cbox_hd->setCurrentIndex(1);
-        }
-
-        if(profile1->getHd() == 3)
-        {
-            ui->cbox_hd->setCurrentIndex(2);
-        }
-
+        ui->cbox_hd->setCurrentIndex(profile1->getHd() - 1);
         //on set le code
         ui->txtfield_code->setText(profile1->getCode());
     }
     if(profile == 1)
     {
-        if(profile2->getHd() == 1)
-        {
-            ui->cbox_hd->setCurrentIndex(0);
-        }
-
-        if(profile2->getHd() == 2)
-        {
-            ui->cbox_hd->setCurrentIndex(1);
-        }
-
-        if(profile2->getHd() == 3)
-        {
-            ui->cbox_hd->setCurrentIndex(2);
-        }
-
+        ui->cbox_hd->setCurrentIndex(profile2->getHd() - 1);
         ui->txtfield_code->setText(profile2->getCode());
     }
     if(profile == 2)
     {
-        if(profile3->getHd() == 1)
-        {
-            ui->cbox_hd->setCurrentIndex(0);
-        }
-
-        if(profile3->getHd() == 2)
-        {
-            ui->cbox_hd->setCurrentIndex(1);
-        }
-
-        if(profile3->getHd() == 3)
-        {
-            ui->cbox_hd->setCurrentIndex(2);
-        }
-
+        ui->cbox_hd->setCurrentIndex(profile3->getHd() - 1);
         ui->txtfield_code->setText(profile3->getCode());
     }
 }
@@ -133,51 +77,15 @@ void Options::on_cbox_hd_currentIndexChanged(int hd)
     //si on change le hd, on l'enregistre dans le profil correspondant
     if(ui->cbox_profil->currentIndex() == 0)
     {
-        if(hd == 0)
-        {
-            profile1->setHd(1);
-        }
-
-        if(hd == 1)
-        {
-            profile1->setHd(2);
-        }
-        if(hd == 2)
-        {
-            profile1->setHd(3);
-        }
+        profile1->setHd(hd + 1);
     }
     if(ui->cbox_profil->currentIndex() == 1)
     {
-        if(hd == 0)
-        {
-            profile2->setHd(1);
-        }
-
-        if(hd == 1)
-        {
-            profile2->setHd(2);
-        }
-        if(hd == 2)
-        {
-            profile2->setHd(3);
-        }
+        profile2->setHd(hd + 1);
     }
     if(ui->cbox_profil->currentIndex() == 2)
     {
-        if(hd == 0)
-        {
-            profile3->setHd(1);
-        }
-
-        if(hd == 1)
-        {
-            profile3->setHd(2);
-        }
-        if(hd == 2)
-        {
-            profile3->setHd(3);
-        }
+        profile3->setHd(hd + 1);
     }
 }
 
@@ -261,6 +169,6 @@ void Options::on_b_cancel_clicked()
     }
     else
     {
-        close();
+        this->close();
     }
 }

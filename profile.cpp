@@ -32,44 +32,14 @@ Profile::Profile(QString objectName)
     //à la création de l'objet, on récupère les données enregistrées avec QSettings
     if(qsettingstable->value("hasBeenSet").toBool() == false)
     {
-            //si le programme n'a jamais été lancé, on met des valeurs vides
-            if(objectName == "profile1")
-            {
-                qsettingstable->setValue("Profile 1/code", "");
-                qsettingstable->setValue("Profile 1/hd", "1");
-            }
+        //si le programme n'a jamais été lancé, on met des valeurs vides
+        qsettingstable->setValue(objectName + "/code", "");
+        qsettingstable->setValue(objectName + "/hd", "1");
+    }
 
-            if(objectName == "profile2")
-            {
-                qsettingstable->setValue("Profile 2/code", "");
-                qsettingstable->setValue("Profile 2/hd", "1");
-            }
-
-            if(objectName == "profile3")
-            {
-                qsettingstable->setValue("Profile 3/code", "");
-                qsettingstable->setValue("Profile 3/hd", "1");
-            }
-        }
-
-        //dans tous les cas, on les enregistre dans l'objet
-        if(objectName == "profile1")
-        {
-            setCode(qsettingstable->value("Profile 1/code").toString());
-            setHd(qsettingstable->value("Profile 1/hd").toInt());
-        }
-
-        if(objectName == "profile2")
-        {
-           setCode(qsettingstable->value("Profile 2/code").toString());
-           setHd(qsettingstable->value("Profile 2/hd").toInt());
-        }
-
-        if(objectName == "profile3")
-        {
-           setCode(qsettingstable->value("Profile 3/code").toString());
-           setHd(qsettingstable->value("Profile 3/hd").toInt());
-        }
+    //dans tous les cas, on les enregistre dans l'objet
+    setCode(qsettingstable->value(objectName + "/code").toString());
+    setHd(qsettingstable->value(objectName + "/hd").toInt());
 }
 
 //getters
