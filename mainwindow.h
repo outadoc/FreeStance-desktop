@@ -48,9 +48,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void checkForUpdates();
     void downloadChangelog();
-    void requestKey(QString key, int hd, bool isLong);
+    void requestKey(QString key, bool isLong);
 
     QUrl getProgrammetvNetUrl();
     QUrl getProgrammeTvUrl();
@@ -73,10 +72,9 @@ public slots:
     void on_actionProfil_1_triggered();
     void on_actionProfil_2_triggered();
     void on_actionProfil_3_triggered();
-    void on_actionPr_f_rences_triggered();
     void on_actionAide_triggered();
-    void on_actionV_rifier_les_mises_jour_triggered();
 
+    void checkForUpdates();
     void checkUpdatesResult(QNetworkReply *reply);
     void askForUpdate(QNetworkReply *reply);
 
@@ -85,6 +83,66 @@ public slots:
     void beginLoading();
     void loading(int percentage);
     void stopLoading(bool ok);
+
+private slots:
+    void on_b_power_clicked();
+    void on_b_free_clicked();
+    void on_b_info_clicked();
+    void on_b_epgfbx_clicked();
+    void on_b_list_clicked();
+    void on_b_rep_clicked();
+    void on_b_mute_clicked();
+    void on_b_up_2_clicked();
+    void on_b_right_2_clicked();
+    void on_b_down_2_clicked();
+    void on_b_left_2_clicked();
+    void on_b_vol_plus_clicked();
+    void on_b_vol_minus_clicked();
+    void on_b_prgm_plus_clicked();
+    void on_b_prgm_minus_clicked();
+    void on_b_ok_clicked();
+    void on_b_up_clicked();
+    void on_b_right_clicked();
+    void on_b_down_clicked();
+    void on_b_left_clicked();
+    void on_b_rec_clicked();
+    void on_b_prevchap_clicked();
+    void on_b_retourrapide_clicked();
+    void on_b_playpause_clicked();
+    void on_b_stop_clicked();
+    void on_b_avancerapide_clicked();
+    void on_b_nextchap_clicked();
+    void on_b_1_clicked();
+    void on_b_2_clicked();
+    void on_b_3_clicked();
+    void on_b_4_clicked();
+    void on_b_5_clicked();
+    void on_b_6_clicked();
+    void on_b_7_clicked();
+    void on_b_8_clicked();
+    void on_b_9_clicked();
+    void on_b_0_clicked();
+    void on_b_yellow_arrow_clicked();
+    void on_b_cycle_clicked();
+    void on_b_tf1_clicked();
+    void on_b_fr2_clicked();
+    void on_b_fr3_clicked();
+    void on_b_cplus_clicked();
+    void on_b_fr5_clicked();
+    void on_b_m6_clicked();
+    void on_b_arte_clicked();
+    void on_b_d8_clicked();
+    void on_b_w9_clicked();
+    void on_b_tmc_clicked();
+    void on_b_nt1_clicked();
+    void on_b_nrj12_clicked();
+    void on_b_fr4_clicked();
+    void on_b_lcp_clicked();
+    void on_b_bfm_clicked();
+    void on_b_itv_clicked();
+    void on_b_dstar_clicked();
+    void on_b_gulli_clicked();
+    void on_b_fro_clicked();
 
 private:
     Ui::MainWindow *ui;

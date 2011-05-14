@@ -159,16 +159,9 @@ void Options::on_b_ok_clicked()
 
 void Options::on_b_cancel_clicked()
 {
-    if(settingsTable->value("hasBeenSet", "hasBeenSet").toString() != "hasBeenSet")
-    {
-        bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
-        if (!hasBeenSet)
-        {
-            QCoreApplication::quit();
-        }
-    }
+    bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
+    if (!hasBeenSet)
+        QCoreApplication::quit();
     else
-    {
-        this->close();
-    }
+        reject();
 }

@@ -33,18 +33,12 @@ class AppSettings
     public:
     AppSettings();
     int getProfileToUse();
-    int getHdToUse();
-    QString getCode();
     QString getDistantVersion();
     int setProfileToUse(int profile);
-    int setHdToUse(int hd);
-    int setCode(QString code);
     int setDistantVersion(QString distantVersion);
 
     private:
     int m_profileToUse;
-    int m_hdToUse;
-    QString m_code;
     QString m_distantVersion;
 };
 
