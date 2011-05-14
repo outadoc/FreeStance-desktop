@@ -40,7 +40,7 @@ class Profile
     private:
     QString m_code;
     int m_hd;
-    QSettings *qsettingstable;
+    QSettings *settingsTable;
 };
 
 #endif // PROFILE_H

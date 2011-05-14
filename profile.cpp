@@ -27,19 +27,19 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 Profile::Profile(QString objectName)
 {
-    qsettingstable = new QSettings("outadoc", "FreeStance");
+    settingsTable = new QSettings("outadoc", "FreeStance");
 
     //à la création de l'objet, on récupère les données enregistrées avec QSettings
-    if(qsettingstable->value("hasBeenSet").toBool() == false)
+    if(settingsTable->value("hasBeenSet").toBool() == false)
     {
         //si le programme n'a jamais été lancé, on met des valeurs vides
-        qsettingstable->setValue(objectName + "/code", "");
-        qsettingstable->setValue(objectName + "/hd", "1");
+        settingsTable->setValue(objectName + "/code", "");
+        settingsTable->setValue(objectName + "/hd", "1");
     }
 
     //dans tous les cas, on les enregistre dans l'objet
-    setCode(qsettingstable->value(objectName + "/code").toString());
-    setHd(qsettingstable->value(objectName + "/hd").toInt());
+    setCode(settingsTable->value(objectName + "/code").toString());
+    setHd(settingsTable->value(objectName + "/hd").toInt());
 }
 
 //getters

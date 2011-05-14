@@ -31,6 +31,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 class AppSettings
 {
     public:
+    AppSettings();
     int getProfileToUse();
     int getHdToUse();
     QString getCode();

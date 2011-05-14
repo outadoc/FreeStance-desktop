@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     //objet pour la gestion des réglages
-    qsettingstable = new QSettings("outadoc", "FreeStance");
+    settingsTable = new QSettings("outadoc", "FreeStance");
 
     options = new Options(this);
     settings = new AppSettings;
@@ -50,12 +50,34 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     int y = desktop_height / 2 - height() / 2 - 25;
     move(QPoint(x, y));
 
-    bool hasBeenSet = qsettingstable->value("hasBeenSet", false).toBool();
+    bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
     //si le prog n'a jamais été utilisé...
     if(hasBeenSet != true)
     {
-        qsettingstable->setValue("hasBeenSet", false);
+        settingsTable->setValue("hasBeenSet", false);
         options->show();
+    }
+
+    //on récupère le dernier profil utilisé pour l'utiliser par défaut dans le programme
+    if(settings->getProfileToUse() == 1)
+    {
+        ui->actionProfil_1->setChecked(true);
+        ui->actionProfil_2->setChecked(false);
+        ui->actionProfil_3->setChecked(false);
+    }
+
+    else if (settings->getProfileToUse() == 2)
+    {
+        ui->actionProfil_1->setChecked(false);
+        ui->actionProfil_2->setChecked(true);
+        ui->actionProfil_3->setChecked(false);
+    }
+
+    else if(settings->getProfileToUse() == 3)
+    {
+        ui->actionProfil_1->setChecked(false);
+        ui->actionProfil_2->setChecked(false);
+        ui->actionProfil_3->setChecked(true);
     }
 
     //url pour les programmes tv
@@ -64,7 +86,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setCesoirtvComUrl(QUrl(tr("http://cesoirtv.com/")));
     setTvmagComUrl(QUrl(tr("http://www.tvmag.com/programme-tv/guide-tele.html?boId=2")));
     setTvexpressComUrl(QUrl(tr("http://tv-express.com/")));
-    setHomepage(getProgrammeTvUrl());
+    setHomepage(getTvexpressComUrl());
 
     //chargement du guide epg
     webbrowser = new QWebView;
@@ -100,7 +122,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::checkForUpdates()
 {
-    ui->lbl_updt_availability->setText("Vérification des mises à jour...");
+    ui->lbl_updt_availability->setText("");
     //on télécharge le fichier texte qui contient la version
     QNetworkAccessManager *manager = new QNetworkAccessManager();
     manager->get(QNetworkRequest(QUrl("http://maj.outadoc.fr/freestance/version.txt")));
@@ -172,13 +194,11 @@ void MainWindow::on_actionAide_triggered()
 void MainWindow::on_actionProfil_1_triggered()
 {
     if(ui->actionProfil_2->isChecked() == true)
-    {
         ui->actionProfil_2->setChecked(false);
-    }
+
     if(ui->actionProfil_3->isChecked() == true)
-    {
         ui->actionProfil_3->setChecked(false);
-    }
+
     ui->actionProfil_1->setChecked(true);
     settings->setProfileToUse(1);
 }
@@ -186,13 +206,11 @@ void MainWindow::on_actionProfil_1_triggered()
 void MainWindow::on_actionProfil_2_triggered()
 {
     if(ui->actionProfil_1->isChecked() == true)
-    {
         ui->actionProfil_1->setChecked(false);
-    }
+
     if(ui->actionProfil_3->isChecked() == true)
-    {
         ui->actionProfil_3->setChecked(false);
-    }
+
     ui->actionProfil_2->setChecked(true);
     settings->setProfileToUse(2);
 }
@@ -200,13 +218,11 @@ void MainWindow::on_actionProfil_2_triggered()
 void MainWindow::on_actionProfil_3_triggered()
 {
     if(ui->actionProfil_1->isChecked() == true)
-    {
         ui->actionProfil_1->setChecked(false);
-    }
+
     if(ui->actionProfil_2->isChecked() == true)
-    {
         ui->actionProfil_2->setChecked(false);
-    }
+
     ui->actionProfil_3->setChecked(true);
     settings->setProfileToUse(3);
 }
@@ -216,31 +232,22 @@ void MainWindow::on_actionPr_f_rences_triggered()
     options->show();
 }
 
-void MainWindow::on_actionToujours_au_dessus_triggered()
-{
-    /*
-    if(ui->actionToujours_au_dessus->isChecked() == true)
-    {
-        setWindowModality(Qt::ApplicationModal);
-    }
-    else
-    {
-        setWindowModality(Qt::NonModal);
-    }
-    */
-}
-
 void MainWindow::on_actionV_rifier_les_mises_jour_triggered()
 {
     checkForUpdates();
 }
 
+void MainWindow::requestKey(QString key, int hd, bool isLong)
+{
+
+}
+
+//choix du site pour l'EPG
 void MainWindow::changeWebsite(int indexToNavigateTo)
 {
-    //choix du site pour l'EPG
     if(indexToNavigateTo == 0)
     {
-        setHomepage(getProgrammeTvUrl());
+        setHomepage(getTvexpressComUrl());
     }
     else if(indexToNavigateTo == 1)
     {
@@ -256,7 +263,7 @@ void MainWindow::changeWebsite(int indexToNavigateTo)
     }
     else if(indexToNavigateTo == 4)
     {
-        setHomepage(getTvexpressComUrl());
+        setHomepage(getProgrammeTvUrl());
     }
     webbrowser->load(getHomepage());
 }
@@ -343,7 +350,7 @@ void MainWindow::loading(int percentage)
 
 void MainWindow::stopLoading(bool ok)
 {
-    ok = true; //j'aime pas les warnings
+    ok = true; //sert à rien, mais j'aime pas les warnings
     ui->prgrbar_browser->setVisible(false);
     ui->lbl_nav_state->setText("Terminé.");
 }

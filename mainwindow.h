@@ -50,6 +50,7 @@ public:
     ~MainWindow();
     void checkForUpdates();
     void downloadChangelog();
+    void requestKey(QString key, int hd, bool isLong);
 
     QUrl getProgrammetvNetUrl();
     QUrl getProgrammeTvUrl();
@@ -73,11 +74,12 @@ public slots:
     void on_actionProfil_2_triggered();
     void on_actionProfil_3_triggered();
     void on_actionPr_f_rences_triggered();
-    void on_actionToujours_au_dessus_triggered();
     void on_actionAide_triggered();
+    void on_actionV_rifier_les_mises_jour_triggered();
+
     void checkUpdatesResult(QNetworkReply *reply);
     void askForUpdate(QNetworkReply *reply);
-    void on_actionV_rifier_les_mises_jour_triggered();
+
     void changeWebsite(int indexToNavigateTo);
     void on_b_home_clicked();
     void beginLoading();
@@ -95,7 +97,7 @@ private:
     QUrl homepage;
     QWebView *webbrowser;
     QVBoxLayout *vbox;
-    QSettings *qsettingstable;
+    QSettings *settingsTable;
 };
 
 #endif // MAINWINDOW_H

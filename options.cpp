@@ -37,7 +37,7 @@ Options::Options(QWidget *parent) :
     profile2 = new Profile("Profile 2");
     profile3 = new Profile("Profile 3");
 
-    qsettingstable = new QSettings("outadoc", "FreeStance");
+    settingsTable = new QSettings("outadoc", "FreeStance");
 
     //remplissage du champ texte avec le code du profil 1
     ui->txtfield_code->setText(profile1->getCode());
@@ -115,18 +115,18 @@ void Options::on_b_ok_clicked()
     //il ne faut pas afficher d'erreur si le champ n'est pas rempli... on n'est pas obligé de remplir tous les profils !
     if(profile1->getCode().length() == 8 )
     {
-        qsettingstable->setValue("Profile 1/code", profile1->getCode());
-        qsettingstable->setValue("Profile 1/hd", profile1->getHd());
+        settingsTable->setValue("Profile 1/code", profile1->getCode());
+        settingsTable->setValue("Profile 1/hd", profile1->getHd());
 
-        qsettingstable->setValue("hasBeenSet", true);
+        settingsTable->setValue("hasBeenSet", true);
         close();
 
         if(profile2->getCode() != "")
         {
             if(profile2->getCode().length() == 8)
             {
-                qsettingstable->setValue("Profile 2/code", profile2->getCode());
-                qsettingstable->setValue("Profile 2/hd", profile2->getHd());
+                settingsTable->setValue("Profile 2/code", profile2->getCode());
+                settingsTable->setValue("Profile 2/hd", profile2->getHd());
 
                 close();
 
@@ -134,8 +134,8 @@ void Options::on_b_ok_clicked()
                 {
                     if(profile3->getCode().length() == 8)
                     {
-                        qsettingstable->setValue("Profile 3/code", profile3->getCode());
-                        qsettingstable->setValue("Profile 3/hd", profile3->getHd());
+                        settingsTable->setValue("Profile 3/code", profile3->getCode());
+                        settingsTable->setValue("Profile 3/hd", profile3->getHd());
 
                         close();
                     }
@@ -159,9 +159,9 @@ void Options::on_b_ok_clicked()
 
 void Options::on_b_cancel_clicked()
 {
-    if(qsettingstable->value("hasBeenSet", "hasBeenSet").toString() != "hasBeenSet")
+    if(settingsTable->value("hasBeenSet", "hasBeenSet").toString() != "hasBeenSet")
     {
-        bool hasBeenSet = qsettingstable->value("hasBeenSet", false).toBool();
+        bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
         if (!hasBeenSet)
         {
             QCoreApplication::quit();

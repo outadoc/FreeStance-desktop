@@ -27,6 +27,19 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 using namespace std;
 
+AppSettings::AppSettings()
+{
+    QSettings *settingsTable = new QSettings("outadoc", "FreeStance");
+
+    if(settingsTable->value("hasBeenSet").toBool() == false)
+    {
+        //si le programme n'a jamais été lancé, on met des valeurs vides
+        settingsTable->setValue("profileToUse", 1);
+    }
+
+    setProfileToUse(settingsTable->value("profileToUse", 1).toInt());
+}
+
 QString AppSettings::getCode()
 {
     return m_code;
@@ -74,6 +87,8 @@ int AppSettings::setProfileToUse(int profile)
     if(profile == 1 || profile == 2 || profile == 3)
     {
         m_profileToUse = profile;
+        QSettings *settingsTable = new QSettings("outadoc", "FreeStance");
+        settingsTable->setValue("profileToUse", profile);
         return 0;
     }
     else

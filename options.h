@@ -58,7 +58,7 @@ private:
     Profile *profile1;
     Profile *profile2;
     Profile *profile3;
-    QSettings *qsettingstable;
+    QSettings *settingsTable;
 };
 
 #endif // OPTIONS_H

@@ -33,6 +33,18 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>622</width>
+        <height>477</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>622</width>
+        <height>477</height>
+       </size>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -589,9 +601,9 @@ cycle</string>
         <widget class="QWidget" name="gridLayoutWidget_2">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>0</x>
            <y>0</y>
-           <width>101</width>
+           <width>121</width>
            <height>321</height>
           </rect>
          </property>
@@ -1740,7 +1752,7 @@ cycle</string>
         </property>
         <item>
          <property name="text">
-          <string>Programme.TV</string>
+          <string>TV-Express.com</string>
          </property>
         </item>
         <item>
@@ -1760,7 +1772,7 @@ cycle</string>
         </item>
         <item>
          <property name="text">
-          <string>TV-Express.com</string>
+          <string>Programme.TV</string>
          </property>
         </item>
        </widget>
@@ -1814,6 +1826,18 @@ cycle</string>
           <width>601</width>
           <height>361</height>
          </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>601</width>
+          <height>361</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>601</width>
+          <height>361</height>
+         </size>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
