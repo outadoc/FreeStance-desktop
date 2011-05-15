@@ -21,9 +21,9 @@
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
-QT       += core gui
+QT += core gui
 
-TARGET = FreeStance
+TARGET = freestance
 TEMPLATE = app
 QT += webkit
 
