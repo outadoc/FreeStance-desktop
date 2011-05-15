@@ -45,5 +45,5 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
-OTHER_FILES += \
+RC_FILE += \
     resources.rc
