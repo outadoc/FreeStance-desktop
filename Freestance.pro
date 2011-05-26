@@ -21,11 +21,10 @@
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
-QT += core gui
+QT += core gui webkit network
 
 TARGET = freestance
 TEMPLATE = app
-QT += webkit
 
 
 SOURCES += main.cpp\
