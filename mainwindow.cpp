@@ -27,8 +27,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "ui_mainwindow.h"
 #include <QSettings>
 
-QString distantVersion;
-
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -139,6 +137,7 @@ void MainWindow::checkUpdatesResult(QNetworkReply *reply)
     {
         //si la version du fichier distant est différente de la version locale
         QString distantVersion = reply->readAll();
+
         if(distantVersion != VERSION)
         {
           settings->setDistantVersion(distantVersion);
