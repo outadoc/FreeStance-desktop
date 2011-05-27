@@ -125,18 +125,20 @@ void MainWindow::checkForUpdates()
     ui->lbl_updt_availability->setText("");
     //on télécharge le fichier texte qui contient la version
     QNetworkAccessManager *manager = new QNetworkAccessManager();
-    manager->get(QNetworkRequest(QUrl("http://maj.outadoc.fr/freestance/version.txt")));
+    manager->get(QNetworkRequest(QUrl("http://maj.outadoc.fr/freestance/version2.txt")));
     QObject::connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(checkUpdatesResult(QNetworkReply *)));
 }
 
 void MainWindow::checkUpdatesResult(QNetworkReply *reply)
 {
     //si le site a été trouvé
-    QVariant statusCodeV = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-    if (statusCodeV.toInt() == 200)
+    QVariant statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+    if (statusCode.toInt() == 200)
     {
         //si la version du fichier distant est différente de la version locale
-        QString distantVersion = reply->readAll();
+        QString distantVersion = reply->read(5);
+
+        //distantVersion = distantVersion.remove(QRegExp("#[^0-9]#|#^.#"));
 
         if(distantVersion != VERSION)
         {
