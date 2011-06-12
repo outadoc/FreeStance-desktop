@@ -1,6 +1,6 @@
 /*
    appsettings.cpp
-   FreeStance 2.0
+   FreeStance 2.0.1
    outadoc (Baptiste Candellier)
    2011
 */

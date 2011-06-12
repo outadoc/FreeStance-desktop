@@ -1,6 +1,6 @@
 /*
    mainwindow.cpp
-   FreeStance 2.0
+   FreeStance 2.0.1
    outadoc (Baptiste Candellier)
    2011
 */
@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     settingsTable = new QSettings("outadoc", "FreeStance");
 
     options = new Options(this);
+    about = new About(this);
     settings = new AppSettings;
 
     //on vérifie les mises à jour
@@ -125,7 +126,7 @@ void MainWindow::checkForUpdates()
     ui->lbl_updt_availability->setText("");
     //on télécharge le fichier texte qui contient la version
     QNetworkAccessManager *manager = new QNetworkAccessManager();
-    manager->get(QNetworkRequest(QUrl("http://maj.outadoc.fr/freestance/version2.txt")));
+    manager->get(QNetworkRequest(QUrl("http://maj.outadoc.fr/freestance/version.txt")));
     QObject::connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(checkUpdatesResult(QNetworkReply *)));
 }
 
@@ -135,11 +136,10 @@ void MainWindow::checkUpdatesResult(QNetworkReply *reply)
     QVariant statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
     if (statusCode.toInt() == 200)
     {
-        //si la version du fichier distant est différente de la version locale
+        //on ne prend que les 5 premiers caractères, sinon ça bug
         QString distantVersion = reply->read(5);
 
-        //distantVersion = distantVersion.remove(QRegExp("#[^0-9]#|#^.#"));
-
+        //si la version du fichier distant est différente de la version locale
         if(distantVersion != VERSION)
         {
           settings->setDistantVersion(distantVersion);
@@ -185,7 +185,7 @@ void MainWindow::on_actionSite_internet_triggered()
 
 void MainWindow::on_action_Propos_triggered()
 {
-    QMessageBox::information(this, tr("FreeStance v") + VERSION, tr("FreeStance est une application vous permettant de contrôler votre Freebox depuis votre ordinateur, sans avoir à aller chercher la télécommande !<br />Elle a été développée par Baptiste Candellier (aka outadoc).<br />Vous pouvez contacter le développeur <a href=\"http://twitter.com/#!/outadoc\">sur Twitter</a> ou <a href=\"mailto:admin@outadoc.fr\">par email.</a><br /><br />Freebox est une marque déposée de Free, SAS.<br />FreeStance est un programme distribué sous license GNU GPl."));
+    about->show();
 }
 
 void MainWindow::on_actionAide_triggered()

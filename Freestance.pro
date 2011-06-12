@@ -24,22 +24,25 @@
 QT += core gui webkit network
 
 TARGET = freestance
-TEMPLATE = app
 
+TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
     options.cpp \
     appsettings.cpp \
-    profile.cpp
+    profile.cpp \
+    about.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
     appsettings.h \
-    profile.h
+    profile.h \
+    about.h
 
 FORMS    += mainwindow.ui \
-    options.ui
+    options.ui \
+    about.ui
 
 RESOURCES += \
     resources.qrc

@@ -1,6 +1,6 @@
 /*
    mainwindow.h
-   FreeStance 2.0
+   FreeStance 2.0.1
    outadoc (Baptiste Candellier)
    2011
 */
@@ -34,6 +34,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "appsettings.h"
 #include "profile.h"
 #include "options.h"
+#include "about.h"
 
 #define VERSION "2.0.1"
 
@@ -147,6 +148,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Options *options;
+    About *about;
     QUrl programmetvNetUrl;
     QUrl programmeTvUrl;
     QUrl cesoirtvComUrl;
