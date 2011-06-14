@@ -55,7 +55,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_telec">
        <attribute name="title">
@@ -630,8 +630,8 @@ cycle</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="toolTip">
@@ -662,8 +662,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -681,8 +681,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -700,8 +700,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -719,8 +719,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -738,8 +738,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -757,8 +757,8 @@ font-weight:bold;</string>
             </property>
             <property name="maximumSize">
              <size>
-              <width>80</width>
-              <height>16777215</height>
+              <width>100</width>
+              <height>43</height>
              </size>
             </property>
             <property name="text">
@@ -1432,7 +1432,7 @@ font-weight:bold;</string>
          <rect>
           <x>150</x>
           <y>10</y>
-          <width>81</width>
+          <width>91</width>
           <height>27</height>
          </rect>
         </property>
@@ -1478,9 +1478,9 @@ font-weight:bold;</string>
        <widget class="QPushButton" name="b_home">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>250</x>
           <y>10</y>
-          <width>81</width>
+          <width>91</width>
           <height>27</height>
          </rect>
         </property>
