@@ -26,7 +26,7 @@
    <string>FreeStance</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/Resources/logo-fb.png</normaloff>:/icons/Resources/logo-fb.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -55,7 +55,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_telec">
        <attribute name="title">

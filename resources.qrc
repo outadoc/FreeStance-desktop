@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>Resources/logo-fb.png</file>
-        <file>Resources/logo-fb.ico</file>
         <file>Resources/outa[dev].png</file>
     </qresource>
     <qresource prefix="/menu_icons">

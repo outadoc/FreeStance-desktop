@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun May 15 13:49:00 2011
+** Created: Tue Jun 14 19:21:57 2011
 **      by: Qt User Interface Compiler version 4.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -361,7 +361,7 @@ public:
         b_power = new QPushButton(gridLayoutWidget_2);
         b_power->setObjectName(QString::fromUtf8("b_power"));
         b_power->setMinimumSize(QSize(0, 35));
-        b_power->setMaximumSize(QSize(80, 16777215));
+        b_power->setMaximumSize(QSize(100, 43));
         b_power->setAutoFillBackground(false);
         b_power->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
 "font-weight:bold;"));
@@ -372,42 +372,42 @@ public:
         b_free = new QPushButton(gridLayoutWidget_2);
         b_free->setObjectName(QString::fromUtf8("b_free"));
         b_free->setMinimumSize(QSize(0, 35));
-        b_free->setMaximumSize(QSize(80, 16777215));
+        b_free->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_free, 2, 0, 1, 1);
 
         b_list = new QPushButton(gridLayoutWidget_2);
         b_list->setObjectName(QString::fromUtf8("b_list"));
         b_list->setMinimumSize(QSize(0, 35));
-        b_list->setMaximumSize(QSize(80, 16777215));
+        b_list->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_list, 5, 0, 1, 1);
 
         b_mute = new QPushButton(gridLayoutWidget_2);
         b_mute->setObjectName(QString::fromUtf8("b_mute"));
         b_mute->setMinimumSize(QSize(0, 35));
-        b_mute->setMaximumSize(QSize(80, 16777215));
+        b_mute->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_mute, 7, 0, 1, 1);
 
         b_epgfbx = new QPushButton(gridLayoutWidget_2);
         b_epgfbx->setObjectName(QString::fromUtf8("b_epgfbx"));
         b_epgfbx->setMinimumSize(QSize(0, 35));
-        b_epgfbx->setMaximumSize(QSize(80, 16777215));
+        b_epgfbx->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_epgfbx, 4, 0, 1, 1);
 
         b_info = new QPushButton(gridLayoutWidget_2);
         b_info->setObjectName(QString::fromUtf8("b_info"));
         b_info->setMinimumSize(QSize(0, 35));
-        b_info->setMaximumSize(QSize(80, 16777215));
+        b_info->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_info, 3, 0, 1, 1);
 
         b_rep = new QPushButton(gridLayoutWidget_2);
         b_rep->setObjectName(QString::fromUtf8("b_rep"));
         b_rep->setMinimumSize(QSize(0, 35));
-        b_rep->setMaximumSize(QSize(80, 16777215));
+        b_rep->setMaximumSize(QSize(100, 43));
 
         gridLayout_2->addWidget(b_rep, 6, 0, 1, 1);
 
@@ -630,13 +630,13 @@ public:
         b_fw->setGeometry(QRect(80, 10, 61, 27));
         b_refresh = new QPushButton(tab_guide);
         b_refresh->setObjectName(QString::fromUtf8("b_refresh"));
-        b_refresh->setGeometry(QRect(150, 10, 81, 27));
+        b_refresh->setGeometry(QRect(150, 10, 91, 27));
         cbox_site = new QComboBox(tab_guide);
         cbox_site->setObjectName(QString::fromUtf8("cbox_site"));
         cbox_site->setGeometry(QRect(450, 10, 161, 27));
         b_home = new QPushButton(tab_guide);
         b_home->setObjectName(QString::fromUtf8("b_home"));
-        b_home->setGeometry(QRect(240, 10, 81, 27));
+        b_home->setGeometry(QRect(250, 10, 91, 27));
         lbl_nav_state = new QLabel(tab_guide);
         lbl_nav_state->setObjectName(QString::fromUtf8("lbl_nav_state"));
         lbl_nav_state->setGeometry(QRect(10, 419, 101, 17));

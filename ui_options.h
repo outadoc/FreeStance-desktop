@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'options.ui'
 **
-** Created: Tue Jun 14 17:42:05 2011
+** Created: Tue Jun 14 19:20:59 2011
 **      by: Qt User Interface Compiler version 4.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -84,13 +84,13 @@ public:
         txtfield_code->setMaxLength(8);
         b_ok = new QPushButton(Options);
         b_ok->setObjectName(QString::fromUtf8("b_ok"));
-        b_ok->setGeometry(QRect(260, 40, 71, 41));
+        b_ok->setGeometry(QRect(250, 40, 81, 41));
         b_cancel = new QPushButton(Options);
         b_cancel->setObjectName(QString::fromUtf8("b_cancel"));
-        b_cancel->setGeometry(QRect(260, 90, 71, 41));
+        b_cancel->setGeometry(QRect(250, 90, 81, 41));
         b_help = new QPushButton(Options);
         b_help->setObjectName(QString::fromUtf8("b_help"));
-        b_help->setGeometry(QRect(260, 140, 71, 31));
+        b_help->setGeometry(QRect(250, 140, 81, 31));
         b_help->setDefault(false);
         b_help->setFlat(false);
 
