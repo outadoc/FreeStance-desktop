@@ -14,4 +14,12 @@
         <file>Resources/update.png</file>
         <file>Resources/website.png</file>
     </qresource>
+    <qresource prefix="/screens">
+        <file>Resources/screen1.png</file>
+        <file>Resources/screen2.png</file>
+        <file>Resources/screen3.png</file>
+        <file>Resources/screen4.png</file>
+        <file>Resources/screen5.png</file>
+        <file>Resources/screen6.png</file>
+    </qresource>
 </RCC>

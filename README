@@ -1,5 +1,3 @@
-//VERSION DE DÉVELOPPEMENT ! Tout n'est pas implémenté !
-
 FreeStance est un programme multiplateforme en C++/Qt. Il vous permet de remplacer la télécommande de votre Freebox, voire de VOS Freebox.
-Le programme est très simple d'utilisation. Configurez simplement les paramètres au premier lancement, voire après si nécessaire. Ensuite, cliquez sur les boutons comme avec une vraie télécommande !
+Le programme est très simple d'utilisation. Configurez simplement les paramètres au premier lancement, ou après si nécessaire. Ensuite, cliquez sur les boutons comme avec une vraie télécommande !
 Ce programme intègre un guide des programmes, ainsi qu'une mosaïque pour un accès rapide aux chaînes de la TNT.

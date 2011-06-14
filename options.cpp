@@ -39,6 +39,8 @@ Options::Options(QWidget *parent) :
 
     settingsTable = new QSettings("outadoc", "FreeStance");
 
+    help = new Help(this);
+
     //remplissage du champ texte avec le code du profil 1
     ui->txtfield_code->setText(profile1->getCode());
     //sélection du hd avec le hd du profil 1
@@ -164,4 +166,9 @@ void Options::on_b_cancel_clicked()
         QCoreApplication::quit();
     else
         reject();
+}
+
+void Options::on_b_help_clicked()
+{
+    help->show();
 }

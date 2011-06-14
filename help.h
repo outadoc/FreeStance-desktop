@@ -1,5 +1,5 @@
 /*
-   options.h
+   help.h
    FreeStance 2.0.1
    outadoc (Baptiste Candellier)
    2011
@@ -23,44 +23,35 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef OPTIONS_H
-#define OPTIONS_H
+#ifndef HELP_H
+#define HELP_H
 
 #include <QDialog>
-#include "appsettings.h"
-#include "profile.h"
-#include "help.h"
+#include <QString>
 
 namespace Ui {
-    class Options;
+    class Help;
 }
 
-class Options : public QDialog
+class Help : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Options(QWidget *parent = 0);
-    ~Options();
+    explicit Help(QWidget *parent = 0);
+    ~Help();
+    void goToStep(int step);
+    void setImageMeta(int step);
+    void setImage(int image);
 
 public slots:
-    void on_cbox_profil_currentIndexChanged(int profile);
-    void on_cbox_hd_currentIndexChanged(int hd);
-    void on_txtfield_code_textEdited();
-    void on_b_ok_clicked();
-    void on_b_cancel_clicked();
-    void on_b_help_clicked();
-
-signals:
-    void saveLastEditedProfile(int);
+    void on_b_prev_clicked();
+    void on_b_next_clicked();
 
 private:
-    Ui::Options *ui;
-    Profile *profile1;
-    Profile *profile2;
-    Profile *profile3;
-    Help* help;
-    QSettings *settingsTable;
+    Ui::Help *ui;
+    int actualStep;
+    QString descriptions[6];
 };
 
-#endif // OPTIONS_H
+#endif // HELP_H

@@ -32,17 +32,20 @@ SOURCES += main.cpp\
     options.cpp \
     appsettings.cpp \
     profile.cpp \
-    about.cpp
+    about.cpp \
+    help.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
     appsettings.h \
     profile.h \
-    about.h
+    about.h \
+    help.h
 
 FORMS    += mainwindow.ui \
     options.ui \
-    about.ui
+    about.ui \
+    help.ui
 
 RESOURCES += \
     resources.qrc

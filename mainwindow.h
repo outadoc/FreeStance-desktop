@@ -35,6 +35,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "profile.h"
 #include "options.h"
 #include "about.h"
+#include "help.h"
 
 #define VERSION "2.0.1"
 
@@ -149,12 +150,15 @@ private:
     Ui::MainWindow *ui;
     Options *options;
     About *about;
+    Help *help;
+
     QUrl programmetvNetUrl;
     QUrl programmeTvUrl;
     QUrl cesoirtvComUrl;
     QUrl tvmagComUrl;
     QUrl tvexpressComUrl;
     QUrl homepage;
+
     QWebView *webbrowser;
     QVBoxLayout *vbox;
     QSettings *settingsTable;

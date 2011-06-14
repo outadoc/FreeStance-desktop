@@ -185,7 +185,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>30</y>
+     <y>40</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -198,13 +198,32 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>80</y>
+     <y>90</y>
      <width>71</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Annuler</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="b_help">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>140</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aide</string>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

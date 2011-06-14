@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'about.ui'
 **
-** Created: Sat May 28 13:01:27 2011
+** Created: Tue Jun 14 17:35:40 2011
 **      by: Qt User Interface Compiler version 4.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -56,7 +56,7 @@ public:
 
     void retranslateUi(QDialog *About)
     {
-        About->setWindowTitle(QApplication::translate("About", "\303\200 Propos VERSION", 0, QApplication::UnicodeUTF8));
+        About->setWindowTitle(QApplication::translate("About", "\303\200 Propos", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("About", "Fermer", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("About", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
