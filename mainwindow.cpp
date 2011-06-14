@@ -36,10 +36,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     options = new Options(this);
     about = new About(this);
+    help = new Help(this);
     settings = new AppSettings;
 
     //on vérifie les mises à jour
     checkForUpdates();
+
+    bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
+    //si le programme n'a jamais été utilisé...
+    if(hasBeenSet != true)
+    {
+        settingsTable->setValue("hasBeenSet", false);
+        options->show();
+    }
 
     //on centre la fenêtre
     QDesktopWidget *widget = QApplication::desktop();
@@ -48,14 +57,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     int x = desktop_width / 2 - width() / 2;
     int y = desktop_height / 2 - height() / 2 - 25;
     move(QPoint(x, y));
-
-    bool hasBeenSet = settingsTable->value("hasBeenSet", false).toBool();
-    //si le prog n'a jamais été utilisé...
-    if(hasBeenSet != true)
-    {
-        settingsTable->setValue("hasBeenSet", false);
-        options->show();
-    }
 
     //on récupère le dernier profil utilisé pour l'utiliser par défaut dans le programme
     if(settings->getProfileToUse() == 1)
@@ -111,9 +112,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     //le stay on top ne marche pas pour le moment, donc
     ui->actionToujours_au_dessus->setVisible(false);
-
-    //easter egg (désolé, il FALLAIT que je le fasse :D)
-    if(2 + 2 == 5) { QMessageBox::critical(this, "Uh Oh", "Tiens, chez vous, 2 + 2 = 5. Vous seriez pas sous Windows par hasard ? =D"); }
 }
 
 MainWindow::~MainWindow()
@@ -190,7 +188,7 @@ void MainWindow::on_action_Propos_triggered()
 
 void MainWindow::on_actionAide_triggered()
 {
-    QMessageBox::information(this, tr("Aide"), tr("Ce programme vous permet de contrôler votre Freebox HD ou Révolution comme vous le feriez avec votre télécommande, mais par le réseau.<br />Vous trouverez votre code télécommande dans les menus de votre Freebox : \"Paramètres > Informations\".<br />Si vous n'avez qu'un seul boitier TV, le numéro du boîtier est HD1. Si par contre vous avez souscrit à l'option Multi-TV, choisissez le numéro du boîtier à contrôler."));
+    help->show();
 }
 
 //bascule du profil par le menu
